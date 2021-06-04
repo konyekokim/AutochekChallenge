@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "car")
-data class Cars(
+data class Car(
     @PrimaryKey val carId: Int,
     val id: String?,
     val title: String?,
