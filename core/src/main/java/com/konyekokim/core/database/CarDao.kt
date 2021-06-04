@@ -12,7 +12,7 @@ interface CarDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(list: List<Car>)
 
-    @Query("SELECT * FROM Car WHERE carId = :carId LIMIT 1")
-    suspend fun getCarById(carId: Int): Car?
+    @Query("SELECT * FROM Car WHERE id = :carId LIMIT 1")
+    suspend fun getCarById(carId: String): Car?
 
 }

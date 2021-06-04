@@ -12,6 +12,6 @@ class CarLocalDataSource @Inject constructor(
         carDao.insertAll(cars)
     }
 
-    suspend fun getCarById(carId: Int) = carDao.getCarById(carId)
+    suspend fun getCarById(carId: String) = carDao.getCarById(carId)
 
 }
