@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/navigation_nav_graph">
+    android:id="@+id/navigation_nav_graph"
+    app:startDestination="@id/carsFragment">
+
+    <fragment
+        android:id="@+id/carsFragment"
+        android:name="com.konyekokim.cars.CarsFragment"
+        android:label="Cars Fragment">
+        <action
+            android:id="@+id/action_carsFragment_to_carDetailFragment"
+            app:destination="@id/carDetailFragment"
+            app:enterAnim="@animator/slide_in_left"
+            app:exitAnim="@animator/slide_out_right"
+            app:popEnterAnim="@animator/slide_in_right"
+            app:popExitAnim="@animator/slide_out_left"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/carDetailFragment"
+        android:name="com.konyekokim.cardetail.CarDetailFragment"
+        android:label="Car name">
+
+        <argument
+            android:name="car_id"
+            app:argType="string"/>
+
+    </fragment>
 
 </navigation>
