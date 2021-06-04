@@ -34,9 +34,9 @@ class CarRemoteDataSource @Inject constructor(
         return onError.invoke()
     }
 
-    suspend fun getAllCars(): Result<List<AllCarsResponseItem>>{
+    suspend fun getAllCars(page: Int): Result<List<AllCarsResponseItem>>{
         return try {
-            val response = carService.getAllCars()
+            val response = carService.getAllCars(page)
             getAllCarsResult(response = response, onError = {
                 Result.Error("Error Fetching All Cars ${response.code()} ${response.message()}")
             })

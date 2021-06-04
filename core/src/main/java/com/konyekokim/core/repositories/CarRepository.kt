@@ -25,8 +25,8 @@ class CarRepository @Inject constructor(
         }
     }
 
-    suspend fun getAllCars(): Result<List<Car>> {
-        return when (val response = remoteDataSource.getAllCars()) {
+    suspend fun getAllCars(page: Int): Result<List<Car>> {
+        return when (val response = remoteDataSource.getAllCars(page)) {
             is Result.Success -> {
                 val cars = carMapper.map(response.data)
                 localDataSource.insertAll(cars)

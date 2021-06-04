@@ -12,16 +12,15 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/buildSrc" />
-            <option value="$PROJECT_DIR$/commons" />
             <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/feature" />
+            <option value="$PROJECT_DIR$/feature/cardetail" />
+            <option value="$PROJECT_DIR$/feature/cars" />
             <option value="$PROJECT_DIR$/lib" />
             <option value="$PROJECT_DIR$/lib/commons" />
             <option value="$PROJECT_DIR$/lib/navigation" />
             <option value="$PROJECT_DIR$/lib/resources" />
             <option value="$PROJECT_DIR$/lib/testcommons" />
-            <option value="$PROJECT_DIR$/navigation" />
-            <option value="$PROJECT_DIR$/resources" />
-            <option value="$PROJECT_DIR$/testcommons" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

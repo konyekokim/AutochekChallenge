@@ -1,14 +1,11 @@
 include(
     ":app",
+    "core",
     "lib:commons",
     "lib:navigation",
     ":lib:resources",
-    ":lib:testcommons"
+    ":lib:testcommons",
+    ":feature:cars",
+    ":feature:cardetail"
 )
 rootProject.name = "Autochek Challenge"
-
-include(":commons")
-include(":navigation")
-include(":resources")
-include(":testcommons")
-include(":core")

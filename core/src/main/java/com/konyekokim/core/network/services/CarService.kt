@@ -15,7 +15,9 @@ interface CarService {
     suspend fun fetchPopularCarBrands(): Response<PopularCarsResponse>
 
     @GET("inventory/car/search")
-    suspend fun getAllCars(): Response<AllCarsResponse>
+    suspend fun getAllCars(
+        @Query("page_number") page: Int,
+    ): Response<AllCarsResponse>
 
     @GET("inventory/car/{carId}")
     suspend fun getCarDetails(
