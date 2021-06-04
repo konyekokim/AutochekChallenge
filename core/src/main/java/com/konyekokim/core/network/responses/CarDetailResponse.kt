@@ -14,7 +14,8 @@ data class CarDetailResponse(
     val city: String,
     val imageUrl: String,
     val reasonForSelling: String,
-    val sellingCondition: String
+    val sellingCondition: String,
+    val model: CarModelDetail
 )
 
 data class CarModelDetail(

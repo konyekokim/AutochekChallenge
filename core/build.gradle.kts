@@ -9,11 +9,7 @@ android {
     buildTypes.forEach {
         it.buildConfigField(
             type = "String",
-            name = "API_BASE_URL", value = "\"https://api-prod.autochek.africa/\""
-        )
-        it.buildConfigField(
-            type = "String",
-            name = "API_VERSION", value = "\"v1/\""
+            name = "API_BASE_URL", value = "\"https://api-prod.autochek.africa/v1/\""
         )
         it.buildConfigField(type = "String", name = "CAR_DATABASE_NAME", value = "\"cars-db\"")
         it.buildConfigField(type = "int", name = "CAR_DATABASE_VERSION", value = "1")
