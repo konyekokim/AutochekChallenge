@@ -1,7 +1,9 @@
 package com.konyekokim.autochekchallenge
 
 import android.app.Application
+import com.konyekokim.autochekchallenge.di.DaggerAppComponent
 import com.konyekokim.core.di.CoreComponent
+import com.konyekokim.core.di.DaggerCoreComponent
 import com.konyekokim.core.di.modules.ContextModule
 import com.konyekokim.core.di.provider.CoreComponentProvider
 
@@ -18,7 +20,7 @@ class AutochekApplication: Application(), CoreComponentProvider {
         coreComponent = DaggerCoreComponent
             .builder()
             .contextModule(ContextModule(this))
-            .build
+            .build()
 
         DaggerAppComponent
             .builder()
@@ -27,7 +29,6 @@ class AutochekApplication: Application(), CoreComponentProvider {
             .inject(this)
     }
 
-    override fun provideCoreComponent(): CoreComponent {
-
-    }
+    override fun provideCoreComponent(): CoreComponent =
+        coreComponent
 }
