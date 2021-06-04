@@ -8,7 +8,6 @@ import com.konyekokim.commons.ui.SingleLiveData
 import com.konyekokim.core.data.DataState
 import com.konyekokim.core.data.Result
 import com.konyekokim.core.data.entities.Car
-import com.konyekokim.core.network.responses.PopularCarsResponse
 import com.konyekokim.core.network.responses.PopularCarsResponseItem
 import com.konyekokim.core.repositories.CarRepository
 import kotlinx.coroutines.launch
