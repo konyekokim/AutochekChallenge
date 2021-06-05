@@ -44,7 +44,10 @@
             android:maxLines="1"
             android:singleLine="true"
             android:text="@{car.title}"
+            android:textSize="20sp"
+            android:fontFamily="@font/gilroy_bold"
             android:textAlignment="textStart"
+            android:layout_marginTop="12dp"
             app:layout_constraintEnd_toStartOf="@id/carRatingIcon"
             app:layout_constraintStart_toStartOf="@id/carImage"
             app:layout_constraintTop_toBottomOf="@id/carImage"
@@ -56,6 +59,8 @@
             android:layout_height="wrap_content"
             android:text="@{car.gradeScore.toString()}"
             android:maxLength="3"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/gilroy_medium"
             app:layout_constraintEnd_toEndOf="@id/carImage"
             app:layout_constraintTop_toBottomOf="@id/carImage"
             tools:text="4.944" />
@@ -74,10 +79,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
+            android:textSize="16sp"
             android:text="@{car.marketplacePrice.toString()}"
             app:layout_constraintStart_toStartOf="@id/carImage"
             app:layout_constraintTop_toBottomOf="@id/carName"
-            tools:text="200,000" />
+            tools:text="200,000"
+            android:fontFamily="@font/gilroy_bold"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
