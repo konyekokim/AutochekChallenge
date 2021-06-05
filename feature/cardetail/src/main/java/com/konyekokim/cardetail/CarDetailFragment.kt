@@ -11,9 +11,7 @@ import com.konyekokim.cardetail.adapter.CarMediaAdapter
 import com.konyekokim.cardetail.databinding.FragmentCardetailBinding
 import com.konyekokim.cardetail.di.CarDetailModule
 import com.konyekokim.cardetail.di.DaggerCarDetailComponent
-import com.konyekokim.commons.extensions.appContext
-import com.konyekokim.commons.extensions.observe
-import com.konyekokim.commons.extensions.showSnackbar
+import com.konyekokim.commons.extensions.*
 import com.konyekokim.core.data.DataState
 import com.konyekokim.core.di.provider.CoreComponentProvider
 import com.konyekokim.core.network.responses.CarDetailResponse
@@ -90,10 +88,9 @@ class CarDetailFragment : Fragment(R.layout.fragment_cardetail) {
     }
 
     private fun onCarDetailViewDataChanged(carDetailResponse: CarDetailResponse){
+        binding.carMediaImage.loadImage(carDetailResponse.imageUrl)
         binding.model.text = ("${carDetailResponse.model.make.name} ${carDetailResponse.model.name}")
-        binding.rating.text = carDetailResponse.gradeScore
-            .toBigDecimal().setScale(1, RoundingMode.UP)
-            .toDouble().toString()
+        binding.rating.text = carDetailResponse.gradeScore.to1dpString()
         binding.interiorColor.text = carDetailResponse.interiorColor
         binding.exteriorColor.text = carDetailResponse.exteriorColor
         binding.engineType.text = carDetailResponse.engineType

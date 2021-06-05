@@ -15,74 +15,71 @@
 
     </data>
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
         android:foreground="?selectableItemBackground"
-        android:onClick="@{() -> viewModel.openCarDetail(car.id, car.title)}"
-        app:cardCornerRadius="@dimen/car_item_card_radius"
-        app:cardElevation="@dimen/car_item_card_elevation">
+        android:onClick="@{() -> viewModel.openCarDetail(car.id, car.title)}">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/carImage"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            android:layout_marginHorizontal="30dp"
+            android:scaleType="fitXY"
+            android:contentDescription="@null"
+            app:imageUrl="@{car.imageUrl}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginHorizontal="30dp"
-                android:id="@+id/carImage"
-                app:imageUrl="@{car.imageUrl}"/>
+        <TextView
+            android:id="@+id/carName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@{car.title}"
+            android:textAlignment="textStart"
+            app:layout_constraintEnd_toStartOf="@id/carRatingIcon"
+            app:layout_constraintStart_toStartOf="@id/carImage"
+            app:layout_constraintTop_toBottomOf="@id/carImage"
+            tools:text="Toyota Camry" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/carName"
-                android:text="@{car.title}"
-                app:layout_constraintTop_toBottomOf="@id/carImage"
-                app:layout_constraintStart_toStartOf="@id/carImage"
-                app:layout_constraintEnd_toEndOf="@id/carImage"
-                android:layout_marginEnd="30dp"
-                android:textAlignment="textStart"
-                android:singleLine="true"
-                android:maxLines="1"
-                tools:text="Toyota Camry"
-                android:ellipsize="end"/>
+        <TextView
+            android:id="@+id/carRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{car.gradeScore.toString()}"
+            android:maxLength="3"
+            app:layout_constraintEnd_toEndOf="@id/carImage"
+            app:layout_constraintTop_toBottomOf="@id/carImage"
+            tools:text="4.944" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{car.gradeScore.toString()}"
-                android:id="@+id/carRating"
-                app:layout_constraintEnd_toEndOf="@id/carImage"
-                android:maxLength="2"
-                app:layout_constraintTop_toBottomOf="@id/carImage"/>
+        <ImageView
+            android:id="@+id/carRatingIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="6dp"
+            app:layout_constraintBottom_toBottomOf="@id/carRating"
+            app:layout_constraintEnd_toStartOf="@id/carRating"
+            app:layout_constraintTop_toTopOf="@id/carRating" />
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                app:layout_constraintTop_toTopOf="@id/carRating"
-                app:layout_constraintBottom_toBottomOf="@id/carRating"
-                app:layout_constraintEnd_toStartOf="@id/carRating"
-                android:layout_marginEnd="6dp"
-                android:id="@+id/carRatingIcon"/>
+        <TextView
+            android:id="@+id/carPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@{car.marketplacePrice.toString()}"
+            app:layout_constraintStart_toStartOf="@id/carImage"
+            app:layout_constraintTop_toBottomOf="@id/carName"
+            tools:text="200,000" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/carPrice"
-                android:text="@{car.marketplacePrice}"
-                app:layout_constraintTop_toBottomOf="@id/carName"
-                app:layout_constraintStart_toStartOf="@id/carImage" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </com.google.android.material.card.MaterialCardView>
 
 </layout>

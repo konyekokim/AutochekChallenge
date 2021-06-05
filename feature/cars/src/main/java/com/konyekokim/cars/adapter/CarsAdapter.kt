@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.konyekokim.cars.CarsViewModel
 import com.konyekokim.cars.databinding.ItemCarBinding
+import com.konyekokim.commons.extensions.loadImage
+import com.konyekokim.commons.extensions.to1dpString
 import com.konyekokim.core.data.entities.Car
 
 class CarsAdapter(
@@ -33,6 +35,9 @@ class CarsAdapter(
                 viewModel = carsViewModel
                 executePendingBindings()
             }
+            /*binding.carName.text = item.title
+            binding.carImage.loadImage(item.imageUrl)
+            binding.carPrice.text = item.gradeScore?.to1dpString()*/
         }
 
     }

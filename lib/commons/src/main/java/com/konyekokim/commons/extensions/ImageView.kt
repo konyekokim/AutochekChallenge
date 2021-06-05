@@ -13,7 +13,7 @@ private val imageRequestOptions by lazy {
 
 fun ImageView.loadImage(imageUrl: String?){
     Glide.with(context)
-        .load("https://image.tmdb.org/t/p/w500/$imageUrl")
+        .load(imageUrl)
         .apply(imageRequestOptions)
         .into(this)
 }

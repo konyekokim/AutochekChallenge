@@ -24,7 +24,6 @@
             app:layout_constraintTop_toTopOf="parent"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:adjustViewBounds="true"
             app:imageUrl="@{popularCar.imageUrl}"
             android:id="@+id/popularCarImage"/>
 

@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.konyekokim.cars.CarsViewModel
 import com.konyekokim.cars.databinding.ItemPopularCarsBinding
+import com.konyekokim.commons.extensions.loadImage
 import com.konyekokim.core.network.responses.PopularCarsResponseItem
 
 class PopularCarsAdapter(private val carsViewModel: CarsViewModel)

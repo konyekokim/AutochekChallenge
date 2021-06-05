@@ -3,7 +3,7 @@ import Configs.Versions.versionMinor
 import Configs.Versions.versionPatch
 
 object Configs {
-    const val applicationId = "com.konyekokim.carbonmovies"
+    const val applicationId = "com.konyekokim.autochekchallenge"
     const val testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
     object Versions {

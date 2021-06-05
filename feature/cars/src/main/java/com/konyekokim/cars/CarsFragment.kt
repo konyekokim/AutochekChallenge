@@ -46,6 +46,7 @@ class CarsFragment: Fragment(R.layout.fragment_cars) {
         observe(viewModel.data, ::onCarsViewDataChanged)
         observe(viewModel.popularCarsData, ::onPopularCarsViewDataChanged)
         observe(viewModel.event, ::onViewEvent)
+        viewModel.getPopularCars()
     }
 
     private fun setUpPopularCarsRecyclerview(){
@@ -59,7 +60,6 @@ class CarsFragment: Fragment(R.layout.fragment_cars) {
     private fun setUpCarsRecyclerView(){
         carsAdapter = CarsAdapter(viewModel)
         with(binding.carsList) {
-            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
             adapter = carsAdapter
         }
     }
