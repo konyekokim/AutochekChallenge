@@ -39,7 +39,4 @@ object Versions {
 
     // Circle ImageView
     const val circleImageView = "2.2.0"
-
-    // Android SVG Loader
-    const val androidSvgLoader = "1.0.2"
 }

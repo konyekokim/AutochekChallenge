@@ -12,8 +12,11 @@ private val imageRequestOptions by lazy {
 }
 
 fun ImageView.loadImage(imageUrl: String?){
-    Glide.with(context)
-        .load(imageUrl)
-        .apply(imageRequestOptions)
-        .into(this)
+    if(!imageUrl.isNullOrEmpty() && imageUrl.endsWith("svg", true)){
+    } else {
+        Glide.with(context)
+            .load(imageUrl)
+            .apply(imageRequestOptions)
+            .into(this)
+    }
 }

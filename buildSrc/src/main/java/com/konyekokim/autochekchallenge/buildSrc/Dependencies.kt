@@ -94,8 +94,4 @@ object Dependencies {
     object CircleImageView {
         const val circleImageView = "de.hdodenhof:circleimageview:${Versions.circleImageView}"
     }
-
-    object AndroidSvgLoader {
-        const val androidSvgLoader = "com.github.ar-android:AndroidSvgLoader:${Versions.androidSvgLoader}"
-    }
 }
