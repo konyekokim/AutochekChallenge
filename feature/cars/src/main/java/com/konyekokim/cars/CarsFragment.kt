@@ -11,6 +11,7 @@ import com.konyekokim.cars.adapter.CarsAdapter
 import com.konyekokim.cars.adapter.PopularCarsAdapter
 import com.konyekokim.cars.databinding.FragmentCarsBinding
 import com.konyekokim.cars.di.CarsModule
+import com.konyekokim.cars.di.DaggerCarsComponent
 import com.konyekokim.commons.extensions.appContext
 import com.konyekokim.commons.extensions.observe
 import com.konyekokim.commons.extensions.showSnackbar
