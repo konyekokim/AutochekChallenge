@@ -29,7 +29,7 @@ class CarMediaAdapter(private val carDetailViewModel: CarDetailViewModel)
         fun bind(item: CarMediaListItem) {
             with(binding){
                 carMediaItem = item
-                viewModel = viewModel
+                viewModel = carDetailViewModel
                 executePendingBindings()
             }
         }

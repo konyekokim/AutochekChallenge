@@ -44,6 +44,7 @@ class CarDetailFragment : Fragment(R.layout.fragment_cardetail) {
         observe(viewModel.carMediaListData, ::onCarMediaViewDataChanged)
         observe(viewModel.carDetailState, ::onCarDetailViewStateChanged)
         observe(viewModel.carDetailData, ::onCarDetailViewDataChanged)
+        observe(viewModel.onMediaItemClickedEvent, ::onMediaItemClickedEvent)
         viewModel.fetchCarDetail(args.carId)
         viewModel.fetchCarMediaList(args.carId)
     }
@@ -51,6 +52,14 @@ class CarDetailFragment : Fragment(R.layout.fragment_cardetail) {
     private fun initViews(){
         binding.carNameText.text = args.carName
         binding.backArrowImg.setOnClickListener { findNavController().popBackStack() }
+    }
+
+    private fun onMediaItemClickedEvent(viewEvent: CarDetailEvent){
+        when(viewEvent){
+            is CarDetailEvent.OnMediaItemClicked -> {
+                binding.carMediaImage.loadImage(viewEvent.carImageUrl)
+            }
+        }
     }
 
     private fun setUpCarMediaRecyclerView(){

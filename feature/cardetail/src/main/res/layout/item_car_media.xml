@@ -17,7 +17,11 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?selectableItemBackground"
+        android:onClick="@{() -> viewModel.onMediaItemClicked(carMediaItem.url)}">
 
         <ImageView
             android:layout_width="80dp"

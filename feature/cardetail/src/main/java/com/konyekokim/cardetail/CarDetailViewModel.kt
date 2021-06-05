@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.konyekokim.commons.ui.SingleLiveData
 import com.konyekokim.core.data.DataState
 import com.konyekokim.core.data.Result
 import com.konyekokim.core.network.responses.CarDetailResponse
@@ -63,6 +64,14 @@ class CarDetailViewModel @Inject constructor(
                 }
             }
         }
+    }
+
+    private val _onMediaItemClickedEvent = SingleLiveData<CarDetailEvent>()
+    val onMediaItemClickedEvent : LiveData<CarDetailEvent>
+        get() = _onMediaItemClickedEvent
+
+    fun onMediaItemClicked(carImageUrl: String){
+        _onMediaItemClickedEvent.value = CarDetailEvent.OnMediaItemClicked(carImageUrl)
     }
 
     companion object {
