@@ -25,4 +25,7 @@ dependencies {
     // Glide
     implementation(Dependencies.Glide.core)
     kapt(Dependencies.Glide.compiler)
+
+    // AndroidSvgLoader
+    implementation(Dependencies.AndroidSvgLoader.androidSvgLoader)
 }
