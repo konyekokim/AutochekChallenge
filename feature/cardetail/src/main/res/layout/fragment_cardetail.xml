@@ -59,20 +59,42 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/rating_text"
+                android:id="@+id/model_text"
+                android:layout_marginTop="24dp"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="24dp"
-                android:text="@string/rating"
+                android:text="@string/car_model"
                 app:layout_constraintTop_toBottomOf="@id/car_media_list"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/model"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="24dp"
+                tools:text="Toyota Camry kinikan"
+                app:layout_constraintTop_toBottomOf="@id/car_media_list"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rating_text"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="24dp"
+                android:text="@string/rating"
+                app:layout_constraintTop_toBottomOf="@id/model_text"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/rating"
+                android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="24dp"
                 tools:text="5.0"
-                app:layout_constraintTop_toBottomOf="@id/car_media_list"/>
+                app:layout_constraintTop_toBottomOf="@id/model_text"/>
 
             <TextView
                 android:layout_width="wrap_content"

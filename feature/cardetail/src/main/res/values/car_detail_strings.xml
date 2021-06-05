@@ -9,4 +9,5 @@
     <string name="reason_for_selling">Reason for selling</string>
     <string name="selling_condition">Selling Condition</string>
     <string name="city">City</string>
+    <string name="car_model">Model</string>
 </resources>
