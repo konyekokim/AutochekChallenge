@@ -49,15 +49,46 @@
             app:layout_constraintTop_toBottomOf="@id/car_name_text"
             android:layout_marginTop="24dp">
 
-            <ImageView
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="340dp"
-                android:scaleType="fitXY"
-                android:id="@+id/car_media_image"
-                android:layout_marginHorizontal="30dp"
-                app:layout_constraintTop_toTopOf="parent"
+                android:layout_height="0dp"
+                android:id="@+id/background_cardview"
+                android:layout_marginTop="80dp"
+                app:cardCornerRadius="16dp"
+                android:elevation="3dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginBottom="30dp"
+                app:layout_constraintTop_toTopOf="@id/image_container"
+                app:layout_constraintBottom_toBottomOf="@id/car_price">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_background"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/image_container"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginHorizontal="30dp"
+                app:cardCornerRadius="16dp">
+
+                <ImageView
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:scaleType="fitXY"
+                    android:id="@+id/car_media_image"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            </androidx.cardview.widget.CardView>
+
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/car_media_list"
@@ -66,10 +97,13 @@
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:orientation="horizontal"
                 android:layout_marginTop="20dp"
+                android:elevation="5dp"
+                android:layout_marginEnd="24dp"
                 tools:listitem="@layout/item_car_media"
+                android:layout_marginStart="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/car_media_image"/>
+                app:layout_constraintTop_toBottomOf="@id/image_container"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -77,7 +111,8 @@
                 android:id="@+id/model_text"
                 android:layout_marginTop="24dp"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="40dp"
+                android:elevation="5dp"
                 android:text="@string/car_model"
                 app:layout_constraintTop_toBottomOf="@id/car_media_list"/>
 
@@ -87,8 +122,9 @@
                 android:id="@+id/model"
                 android:layout_marginTop="24dp"
                 android:fontFamily="@font/gilroy_bold"
+                android:elevation="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="24dp"
+                android:layout_marginEnd="40dp"
                 tools:text="Toyota Camry kinikan"
                 app:layout_constraintTop_toBottomOf="@id/car_media_list"/>
 
@@ -97,8 +133,9 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/rating_text"
                 android:layout_marginTop="8dp"
+                android:elevation="5dp"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="40dp"
                 android:text="@string/rating"
                 app:layout_constraintTop_toBottomOf="@id/model_text"/>
 
@@ -107,8 +144,9 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/rating"
                 android:layout_marginTop="8dp"
+                android:elevation="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="24dp"
+                android:layout_marginEnd="40dp"
                 tools:text="5.0"
                 android:fontFamily="@font/gilroy_bold"
                 app:layout_constraintTop_toBottomOf="@id/model_text"/>
@@ -119,7 +157,8 @@
                 android:id="@+id/interior_color_text"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginTop="8dp"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="40dp"
+                android:elevation="5dp"
                 android:text="@string/interior_color"
                 app:layout_constraintTop_toBottomOf="@id/rating_text"/>
 
@@ -129,7 +168,8 @@
                 android:id="@+id/interior_color"
                 android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="24dp"
+                android:layout_marginEnd="40dp"
+                android:elevation="5dp"
                 tools:text="Black"
                 android:fontFamily="@font/gilroy_bold"
                 app:layout_constraintTop_toBottomOf="@id/rating_text"/>
@@ -140,7 +180,8 @@
                 android:id="@+id/exterior_color_text"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginTop="8dp"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="40dp"
+                android:elevation="5dp"
                 android:text="@string/exterior_color"
                 app:layout_constraintTop_toBottomOf="@id/interior_color_text"/>
 
@@ -150,7 +191,8 @@
                 android:id="@+id/exterior_color"
                 android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="24dp"
+                android:layout_marginEnd="40dp"
+                android:elevation="5dp"
                 tools:text="Yellow"
                 android:fontFamily="@font/gilroy_bold"
                 app:layout_constraintTop_toBottomOf="@id/interior_color_text"/>
@@ -161,7 +203,8 @@
                 android:id="@+id/engine_type_text"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginTop="8dp"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="40dp"
+                android:elevation="5dp"
                 android:text="@string/engine_type"
                 app:layout_constraintTop_toBottomOf="@id/exterior_color_text"/>
 
@@ -171,8 +214,9 @@
                 android:id="@+id/engine_type"
                 android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="24dp"
+                android:layout_marginEnd="40dp"
                 tools:text="V6"
+                android:elevation="5dp"
                 android:fontFamily="@font/gilroy_bold"
                 app:layout_constraintTop_toBottomOf="@id/exterior_color_text"/>
 
@@ -182,7 +226,8 @@
                 android:id="@+id/year_text"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginTop="8dp"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="40dp"
+                android:elevation="5dp"
                 android:text="@string/year"
                 app:layout_constraintTop_toBottomOf="@id/engine_type_text"/>
 
@@ -192,8 +237,9 @@
                 android:id="@+id/year"
                 android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="24dp"
+                android:layout_marginEnd="40dp"
                 tools:text="2003"
+                android:elevation="5dp"
                 android:fontFamily="@font/gilroy_bold"
                 app:layout_constraintTop_toBottomOf="@id/engine_type_text"/>
 
@@ -203,8 +249,9 @@
                 android:id="@+id/mileage_text"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginTop="8dp"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="40dp"
                 android:text="@string/mileage"
+                android:elevation="5dp"
                 app:layout_constraintTop_toBottomOf="@id/year_text"/>
 
             <TextView
@@ -214,8 +261,9 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/gilroy_bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="24dp"
+                android:layout_marginEnd="40dp"
                 tools:text="2000km"
+                android:elevation="5dp"
                 app:layout_constraintTop_toBottomOf="@id/year_text"/>
 
             <TextView
@@ -224,9 +272,9 @@
                 android:id="@+id/city_text"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginTop="8dp"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="40dp"
                 android:text="@string/city"
-                android:fontFamily="@font/gilroy_bold"
+                android:elevation="5dp"
                 app:layout_constraintTop_toBottomOf="@id/mileage_text"/>
 
             <TextView
@@ -235,7 +283,8 @@
                 android:id="@+id/city"
                 android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="24dp"
+                android:layout_marginEnd="40dp"
+                android:elevation="5dp"
                 tools:text="Yaba, Lagos"
                 android:fontFamily="@font/gilroy_bold"
                 app:layout_constraintTop_toBottomOf="@id/mileage_text"/>
@@ -246,7 +295,8 @@
                 android:id="@+id/reason_text"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginTop="8dp"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="40dp"
+                android:elevation="5dp"
                 android:text="@string/reason_for_selling"
                 app:layout_constraintTop_toBottomOf="@id/city_text"/>
 
@@ -256,8 +306,9 @@
                 android:id="@+id/reason"
                 android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="24dp"
+                android:layout_marginEnd="40dp"
                 tools:text="Want new car"
+                android:elevation="5dp"
                 android:fontFamily="@font/gilroy_bold"
                 app:layout_constraintTop_toBottomOf="@id/city_text"/>
 
@@ -267,7 +318,8 @@
                 android:id="@+id/selling_condition_text"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginTop="8dp"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="40dp"
+                android:elevation="5dp"
                 android:text="@string/selling_condition"
                 app:layout_constraintTop_toBottomOf="@id/reason_text"/>
 
@@ -277,8 +329,9 @@
                 android:id="@+id/selling_condition"
                 android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="24dp"
+                android:layout_marginEnd="40dp"
                 tools:text="Foreign"
+                android:elevation="5dp"
                 android:fontFamily="@font/gilroy_bold"
                 app:layout_constraintTop_toBottomOf="@id/reason_text"/>
 
@@ -287,8 +340,9 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/car_price"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="24dp"
+                android:layout_marginEnd="40dp"
                 tools:text="N200,000"
+                android:elevation="5dp"
                 app:layout_constraintTop_toBottomOf="@id/selling_condition"
                 android:layout_marginTop="30dp"
                 android:paddingBottom="40dp"
