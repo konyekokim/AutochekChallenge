@@ -94,4 +94,9 @@ object Dependencies {
     object CircleImageView {
         const val circleImageView = "de.hdodenhof:circleimageview:${Versions.circleImageView}"
     }
+
+    object Coil {
+        const val coil = "io.coil-kt:coil:${Versions.coil}"
+        const val coilSvg = "io.coil-kt:coil-svg:${Versions.coil}"
+    }
 }

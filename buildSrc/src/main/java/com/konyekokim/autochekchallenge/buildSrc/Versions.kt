@@ -39,4 +39,7 @@ object Versions {
 
     // Circle ImageView
     const val circleImageView = "2.2.0"
+
+    // Coil
+    const val coil = "1.2.2"
 }
