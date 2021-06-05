@@ -23,14 +23,23 @@
         android:foreground="?selectableItemBackground"
         android:onClick="@{() -> viewModel.onMediaItemClicked(carMediaItem.url)}">
 
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:id="@+id/carMedia"
-            android:layout_marginStart="8dp"
-            app:imageUrl="@{carMediaItem.url}"
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:cardCornerRadius="6dp"
+            android:layout_marginStart="8dp">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:id="@+id/carMedia"
+                app:imageUrl="@{carMediaItem.url}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+        </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
