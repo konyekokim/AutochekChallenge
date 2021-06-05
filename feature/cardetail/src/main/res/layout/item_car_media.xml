@@ -17,13 +17,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="4dp">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:id="@+id/carMedia"
+            android:layout_marginStart="8dp"
             app:imageUrl="@{carMediaItem.url}"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
