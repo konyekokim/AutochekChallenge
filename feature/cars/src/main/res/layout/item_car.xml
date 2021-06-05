@@ -21,7 +21,7 @@
         android:clickable="true"
         android:focusable="true"
         android:foreground="?selectableItemBackground"
-        android:onClick="@{() -> viewModel.openCarDetail(car.id)}"
+        android:onClick="@{() -> viewModel.openCarDetail(car.id, car.title)}"
         app:cardCornerRadius="@dimen/car_item_card_radius"
         app:cardElevation="@dimen/car_item_card_elevation">
 

@@ -63,8 +63,8 @@ class CarsViewModel @Inject constructor(
     val event: LiveData<CarsEvent>
         get() = _event
 
-    fun openCarDetail(car: Car) {
-        _event.value = CarsEvent.OpenCarDetail(car)
+    fun openCarDetail(carId: String, carName: String) {
+        _event.value = CarsEvent.OpenCarDetail(carId, carName)
     }
 
     fun retry() {

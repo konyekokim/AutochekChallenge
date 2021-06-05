@@ -69,7 +69,7 @@ class CarsFragment: Fragment(R.layout.fragment_cars) {
             is CarsEvent.OpenCarDetail -> {
                 findNavController().navigate(
                     CarsFragmentDirections.actionCarsFragmentToCarDetailFragment(
-                        viewEvent.car.id, viewEvent.car.title ?: ""
+                        viewEvent.carId, viewEvent.carName
                     )
                 )
             }

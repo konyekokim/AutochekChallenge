@@ -102,6 +102,7 @@ class CarDetailFragment : Fragment(R.layout.fragment_cardetail) {
         binding.city.text = carDetailResponse.city
         binding.reason.text = carDetailResponse.reasonForSelling
         binding.sellingCondition.text = carDetailResponse.sellingCondition
+        binding.carPrice.text = carDetailResponse.marketplacePrice.toString()
     }
 
     private fun setUpDependencyInjection(){
