@@ -11,6 +11,8 @@
     <color name="color_background">#FFFFFF</color>
     <color name="color_on_background">#4E505B</color>
 
+    <color name="color_page_bg">#f5f5f5</color>
+
     <color name="color_error">#FD567E</color>
     <color name="color_on_error">#FFFFFF</color>
 </resources>

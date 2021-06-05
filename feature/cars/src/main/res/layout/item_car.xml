@@ -23,18 +23,49 @@
         android:foreground="?selectableItemBackground"
         android:onClick="@{() -> viewModel.openCarDetail(car.id, car.title)}">
 
-        <ImageView
-            android:layout_marginTop="22dp"
-            android:id="@+id/carImage"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:layout_marginHorizontal="30dp"
-            android:scaleType="fitXY"
-            android:contentDescription="@null"
-            app:imageUrl="@{car.imageUrl}"
-            app:layout_constraintEnd_toEndOf="parent"
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/background_cardview"
+            android:layout_marginTop="100dp"
+            app:cardCornerRadius="16dp"
+            android:elevation="3dp"
+            android:layout_marginHorizontal="12dp"
+            app:layout_constraintTop_toTopOf="@id/image_container"
+            app:layout_constraintBottom_toBottomOf="@id/carPrice">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/color_background"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/image_container"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="22dp"
+            app:cardCornerRadius="16dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp">
+
+            <ImageView
+                android:id="@+id/carImage"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:scaleType="fitXY"
+                android:contentDescription="@null"
+                app:imageUrl="@{car.imageUrl}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/carName"
@@ -44,14 +75,15 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:singleLine="true"
+            android:elevation="5dp"
             android:text="@{car.title}"
             android:textSize="20sp"
             android:fontFamily="@font/gilroy_bold"
             android:textAlignment="textStart"
             android:layout_marginTop="12dp"
             app:layout_constraintEnd_toStartOf="@id/carRatingIcon"
-            app:layout_constraintStart_toStartOf="@id/carImage"
-            app:layout_constraintTop_toBottomOf="@id/carImage"
+            app:layout_constraintStart_toStartOf="@id/image_container"
+            app:layout_constraintTop_toBottomOf="@id/image_container"
             tools:text="Toyota Camry" />
 
         <TextView
@@ -60,8 +92,9 @@
             android:layout_height="wrap_content"
             android:text="@{car.gradeScore.toString()}"
             android:maxLength="3"
+            android:elevation="5dp"
             android:fontFamily="@font/gilroy_medium"
-            app:layout_constraintEnd_toEndOf="@id/carImage"
+            app:layout_constraintEnd_toEndOf="@id/image_container"
             app:layout_constraintTop_toTopOf="@id/carName"
             app:layout_constraintBottom_toBottomOf="@id/carName"
             tools:text="4.944" />
@@ -72,6 +105,7 @@
             android:layout_height="24dp"
             android:layout_marginEnd="6dp"
             android:src="@drawable/ic_star"
+            android:elevation="5dp"
             app:layout_constraintBottom_toBottomOf="@id/carRating"
             app:layout_constraintEnd_toStartOf="@id/carRating"
             app:layout_constraintTop_toTopOf="@id/carRating" />
@@ -82,8 +116,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
             android:textSize="16sp"
+            android:paddingBottom="30dp"
+            android:elevation="5dp"
             android:text="@{car.marketplacePrice.toString()}"
-            app:layout_constraintStart_toStartOf="@id/carImage"
+            app:layout_constraintStart_toStartOf="@id/image_container"
             app:layout_constraintTop_toBottomOf="@id/carName"
             tools:text="200,000"
             android:fontFamily="@font/gilroy_bold"/>
