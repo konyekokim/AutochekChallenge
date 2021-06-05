@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="car_item_spacing">16dp</dimen>
+    <dimen name="car_item_title_margin">4dp</dimen>
+    <dimen name="car_item_poster_height">240dp</dimen>
+    <dimen name="car_item_card_radius">4dp</dimen>
+    <dimen name="car_item_card_elevation">8dp</dimen>
+
+    <dimen name="car_status_footer_padding">8dp</dimen>
+</resources>
