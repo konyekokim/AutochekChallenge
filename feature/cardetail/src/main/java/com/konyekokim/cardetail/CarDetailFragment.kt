@@ -16,7 +16,6 @@ import com.konyekokim.core.data.DataState
 import com.konyekokim.core.di.provider.CoreComponentProvider
 import com.konyekokim.core.network.responses.CarDetailResponse
 import com.konyekokim.core.network.responses.CarMediaListItem
-import java.math.RoundingMode
 import javax.inject.Inject
 
 class CarDetailFragment : Fragment(R.layout.fragment_cardetail) {
@@ -108,7 +107,7 @@ class CarDetailFragment : Fragment(R.layout.fragment_cardetail) {
         binding.city.text = carDetailResponse.city
         binding.reason.text = carDetailResponse.reasonForSelling
         binding.sellingCondition.text = carDetailResponse.sellingCondition
-        binding.carPrice.text = carDetailResponse.marketplacePrice.toString()
+        binding.carPrice.text = carDetailResponse.marketplacePrice.convertToNairaDisplay()
     }
 
     private fun setUpDependencyInjection(){
