@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="rating">Rating</string>
+    <string name="interior_color">Interior Color</string>
+    <string name="exterior_color">Exterior Color</string>
+    <string name="mileage">Mileage</string>
+    <string name="year">Year</string>
+    <string name="engine_type">Engine Type</string>
+    <string name="reason_for_selling">Reason for selling</string>
+    <string name="selling_condition">Selling Condition</string>
+    <string name="city">City</string>
+</resources>
