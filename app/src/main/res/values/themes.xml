@@ -11,6 +11,7 @@
         <item name="android:colorBackground">@color/color_background</item>
         <item name="colorError">@color/color_error</item>
         <item name="colorOnError">@color/color_on_error</item>
+        <item name="android:fontFamily">@font/gilroy_regular</item>
     </style>
 
 </resources>
