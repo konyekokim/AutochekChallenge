@@ -34,6 +34,9 @@ dependencies {
 
     implementation(Dependencies.Google.material)
 
+    // Circle ImageView
+    implementation(Dependencies.CircleImageView.circleImageView)
+
     // Dagger
     implementation(Dependencies.Dagger.dagger)
     kapt(Dependencies.Dagger.compiler)

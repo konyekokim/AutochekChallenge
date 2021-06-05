@@ -90,4 +90,8 @@ object Dependencies {
 
         const val mockWebServer = "com.squareup.okhttp3:mockwebserver:${Versions.okHttp}"
     }
+
+    object CircleImageView {
+        const val circleImageView = "de.hdodenhof:circleimageview:${Versions.circleImageView}"
+    }
 }
