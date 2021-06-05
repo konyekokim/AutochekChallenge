@@ -24,9 +24,10 @@
         android:onClick="@{() -> viewModel.openCarDetail(car.id, car.title)}">
 
         <ImageView
+            android:layout_marginTop="22dp"
             android:id="@+id/carImage"
-            android:layout_width="240dp"
-            android:layout_height="240dp"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
             android:layout_marginHorizontal="30dp"
             android:scaleType="fitXY"
             android:contentDescription="@null"
@@ -59,10 +60,10 @@
             android:layout_height="wrap_content"
             android:text="@{car.gradeScore.toString()}"
             android:maxLength="3"
-            android:layout_marginTop="12dp"
             android:fontFamily="@font/gilroy_medium"
             app:layout_constraintEnd_toEndOf="@id/carImage"
-            app:layout_constraintTop_toBottomOf="@id/carImage"
+            app:layout_constraintTop_toTopOf="@id/carName"
+            app:layout_constraintBottom_toBottomOf="@id/carName"
             tools:text="4.944" />
 
         <ImageView
@@ -70,6 +71,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginEnd="6dp"
+            android:src="@drawable/ic_star"
             app:layout_constraintBottom_toBottomOf="@id/carRating"
             app:layout_constraintEnd_toStartOf="@id/carRating"
             app:layout_constraintTop_toTopOf="@id/carRating" />
